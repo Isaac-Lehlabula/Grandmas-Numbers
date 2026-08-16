@@ -1,0 +1,6 @@
+@GrandmasDreamNumbers.Api_HostAddress = http://localhost:5186
+
+GET {{GrandmasDreamNumbers.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

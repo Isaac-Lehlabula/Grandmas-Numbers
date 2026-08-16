@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GrandmasDreamNumbers.Api/GrandmasDreamNumbers.Api.csproj" />
+    <Project Path="src/GrandmasDreamNumbers.Application/GrandmasDreamNumbers.Application.csproj" />
+    <Project Path="src/GrandmasDreamNumbers.Domain/GrandmasDreamNumbers.Domain.csproj" />
+    <Project Path="src/GrandmasDreamNumbers.Infrastructure/GrandmasDreamNumbers.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GrandmasDreamNumbers.IntegrationTests/GrandmasDreamNumbers.IntegrationTests.csproj" />
+    <Project Path="tests/GrandmasDreamNumbers.UnitTests/GrandmasDreamNumbers.UnitTests.csproj" />
+  </Folder>
+</Solution>

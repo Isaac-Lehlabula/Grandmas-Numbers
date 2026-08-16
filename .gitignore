@@ -1,0 +1,66 @@
+# =========================
+# .NET / ASP.NET Core
+# =========================
+bin/
+obj/
+*.user
+*.suo
+.vs/
+appsettings.*.local.json
+*.db
+*.db-shm
+*.db-wal
+
+# =========================
+# Flutter / Dart
+# =========================
+mobile/**/.dart_tool/
+mobile/**/.flutter-plugins
+mobile/**/.flutter-plugins-dependencies
+mobile/**/.packages
+mobile/**/.pub-cache/
+mobile/**/.pub/
+mobile/**/build/
+mobile/**/*.iml
+
+# Android
+mobile/**/android/.gradle/
+mobile/**/android/captures/
+mobile/**/android/gradlew
+mobile/**/android/gradlew.bat
+mobile/**/android/local.properties
+mobile/**/android/**/GeneratedPluginRegistrant.java
+mobile/**/android/key.properties
+mobile/**/*.jks
+
+# iOS
+mobile/**/ios/Flutter/.last_build_id
+mobile/**/ios/Flutter/Generated.xcconfig
+mobile/**/ios/Flutter/flutter_export_environment.sh
+mobile/**/ios/Pods/
+mobile/**/ios/.symlinks/
+mobile/**/ios/Runner.xcworkspace/xcuserdata/
+mobile/**/*.mode1v3
+mobile/**/*.mode2v3
+mobile/**/*.moved-aside
+mobile/**/*.pbxuser
+mobile/**/*.perspectivev3
+mobile/**/DerivedData/
+
+# =========================
+# Secrets / environment
+# =========================
+.env
+.env.*
+*.pfx
+*.pem
+secrets.json
+
+# =========================
+# Editors / OS
+# =========================
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
