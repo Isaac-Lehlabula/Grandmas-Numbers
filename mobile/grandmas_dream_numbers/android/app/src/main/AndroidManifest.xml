@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
-        android:label="grandmas_dream_numbers"
+        android:label="Gogo's Numbers"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

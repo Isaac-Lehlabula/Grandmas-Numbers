@@ -19,7 +19,7 @@ class OnboardingScreen extends StatelessWidget {
               Icon(Icons.auto_stories, size: 72, color: theme.colorScheme.primary),
               const SizedBox(height: 24),
               Text(
-                "Grandma's Dream Numbers",
+                "Gogo's Numbers",
                 textAlign: TextAlign.center,
                 style: theme.textTheme.headlineMedium,
               ),

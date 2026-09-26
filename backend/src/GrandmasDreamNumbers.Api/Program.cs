@@ -31,7 +31,7 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new()
     {
-        Title = "Grandma's Dream Numbers API",
+        Title = "Gogo's Numbers API",
         Version = "v1"
     });
 });
@@ -90,10 +90,24 @@ builder.Services.AddHealthChecks()
         builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty,
         name: "postgresql");
 
+const string DevCorsPolicy = "DevCors";
+builder.Services.AddCors(options =>
+{
+    // Native app targets (Android/iOS) aren't subject to CORS at all - this
+    // is only needed for the Flutter *web* target during local development.
+    options.AddPolicy(DevCorsPolicy, policy => policy
+        .SetIsOriginAllowed(_ => true)
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials());
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseCors(DevCorsPolicy);
+
     app.UseSwagger();
     app.UseSwaggerUI();
 

@@ -164,6 +164,6 @@ public class DreamAnalysisService(
     }
 
     private static string BuildFallbackSummary(int matchCount) => matchCount > 0
-        ? "Grandma recognized some familiar symbols in this dream."
-        : "Grandma couldn't find a familiar symbol in this dream this time.";
+        ? "Gogo recognized some familiar symbols in this dream."
+        : "Gogo couldn't find a familiar symbol in this dream this time.";
 }

@@ -20,7 +20,7 @@ class DreamAnalysisView extends StatelessWidget {
         const SizedBox(height: 8),
         Text(result.originalText, style: theme.textTheme.bodyLarge),
         const SizedBox(height: 24),
-        Text('What Grandma sees', style: theme.textTheme.titleLarge),
+        Text('What Gogo sees', style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
         Text(result.summary, style: theme.textTheme.bodyLarge),
         const SizedBox(height: 24),
@@ -71,7 +71,7 @@ class _EmptyMatchesCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: const Padding(
         padding: EdgeInsets.all(20),
-        child: Text('Grandma didn\'t recognize a symbol in this dream this time.'),
+        child: Text('Gogo didn\'t recognize a symbol in this dream this time.'),
       ),
     );
   }

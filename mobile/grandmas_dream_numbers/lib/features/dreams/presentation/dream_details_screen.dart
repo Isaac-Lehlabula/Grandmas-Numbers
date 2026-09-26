@@ -15,6 +15,10 @@ class DreamDetailsScreen extends ConsumerWidget {
   Future<void> _analyseAgain(BuildContext context, WidgetRef ref) async {
     try {
       final result = await ref.read(dreamReanalysisProvider(dreamId).future);
+      // Re-analysing can change the dream's summary, which the history
+      // list and this same detail view both display - refresh both caches.
+      ref.invalidate(dreamHistoryProvider(null));
+      ref.invalidate(dreamDetailProvider(dreamId));
       if (context.mounted) {
         context.push('/dreams/results', extra: result);
       }

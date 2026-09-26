@@ -1,6 +1,6 @@
-# Grandma's Dream Numbers
+# Gogo's Numbers
 
-An app that interprets dreams the way a traditional grandmother would: it
+An app that interprets dreams the way a traditional gogo would: it
 reads back the symbols in your dream and connects them to lucky numbers from
 a private, curated cheat sheet. The AI identifies and explains symbols —
 it never invents a number. Every number returned to a user always traces
@@ -93,10 +93,11 @@ dotnet run --project src/GrandmasDreamNumbers.Api
 
 Swagger UI is available at `/swagger` in development. A `/health` endpoint
 reports API and database status. On startup in the Development environment,
-the app also seeds four sample dream symbols (Snake, River, Money, Baby) and
-the `Admin`/`User` roles — **this is placeholder sample data**, not the real
-cheat sheet; see `docs/cheat-sheet-import.md` (once written) for how to
-replace it.
+the app also seeds the real dream-number cheat sheet (numbers 1–52, ~257
+symbols — see `Infrastructure/Persistence/Seed/DevelopmentSeeder.cs`) and
+the `Admin`/`User` roles. Seeding only runs once, when the `DreamSymbols`
+table is completely empty — see `docs/cheat-sheet-import.md` if you need to
+correct or extend entries on a database that's already been seeded.
 
 ### Sample login/API flow
 

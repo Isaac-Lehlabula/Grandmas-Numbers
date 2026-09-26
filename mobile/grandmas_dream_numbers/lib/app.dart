@@ -14,7 +14,7 @@ class GrandmasDreamNumbersApp extends ConsumerWidget {
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp.router(
-      title: "Grandma's Dream Numbers",
+      title: "Gogo's Numbers",
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),

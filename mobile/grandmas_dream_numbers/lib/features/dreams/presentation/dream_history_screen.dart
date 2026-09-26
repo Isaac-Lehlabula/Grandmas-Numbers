@@ -22,6 +22,11 @@ class _DreamHistoryScreenState extends ConsumerState<DreamHistoryScreen> {
     try {
       await ref.read(dreamsApiProvider).delete(dream.id);
       ref.invalidate(dreamHistoryProvider(_query));
+      // Home's "Recent dreams" always reads the null-query cache - refresh
+      // it too when a search filter means it wasn't just invalidated above.
+      if (_query != null) {
+        ref.invalidate(dreamHistoryProvider(null));
+      }
     } catch (error) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(

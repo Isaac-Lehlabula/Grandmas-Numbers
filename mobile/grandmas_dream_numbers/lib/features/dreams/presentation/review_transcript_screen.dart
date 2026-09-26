@@ -44,7 +44,7 @@ class _ReviewTranscriptScreenState extends State<ReviewTranscriptScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Make any changes before sending this to Grandma.",
+                "Make any changes before sending this to Gogo.",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 16),

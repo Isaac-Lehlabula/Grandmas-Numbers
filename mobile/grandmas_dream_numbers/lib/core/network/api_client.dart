@@ -6,7 +6,7 @@ import '../storage/secure_storage_service.dart';
 /// Placeholder base URL. Point this at the local backend during development
 /// (10.0.2.2 for the Android emulator's host loopback) and move it to build
 /// configuration before release.
-const String _baseUrl = 'http://10.0.2.2:5000/api';
+const String _baseUrl = 'http://localhost:5210/api';
 
 final apiClientProvider = Provider<ApiClient>((ref) {
   return ApiClient(ref.watch(secureStorageProvider));

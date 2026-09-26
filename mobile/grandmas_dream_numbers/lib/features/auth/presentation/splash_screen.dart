@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             Icon(Icons.nightlight_round, size: 64, color: theme.colorScheme.primary),
             const SizedBox(height: 16),
-            Text("Grandma's Dream Numbers", style: theme.textTheme.titleLarge),
+            Text("Gogo's Numbers", style: theme.textTheme.titleLarge),
             const SizedBox(height: 32),
             const CircularProgressIndicator(),
           ],

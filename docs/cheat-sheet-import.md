@@ -1,16 +1,23 @@
-# Replacing the sample cheat sheet with the real one
+# Correcting or extending the cheat sheet
 
-The four symbols seeded today (Snake, River, Money, Baby — see
-`Infrastructure/Persistence/Seed/DevelopmentSeeder.cs`) are explicitly
-**sample data for local development**, not the real grandmother's cheat
-sheet. This doc covers what to do before any real deployment.
+`DevelopmentSeeder.SeedAsync` (see
+`Infrastructure/Persistence/Seed/DevelopmentSeeder.cs`) seeds the real
+dream-number cheat sheet — numbers 1–52, transcribed from the traditional
+dream book supplied by the project owner. This doc covers two things: how
+that data reaches a database, and what to do when you need to add, correct,
+or otherwise import entries beyond what's in `DevelopmentSeeder`.
 
-## The sample seeding already won't run in production
+## Seeding only ever runs once per database
 
 `DevelopmentSeeder.SeedAsync` is only ever called from `Program.cs` inside
 the `app.Environment.IsDevelopment()` branch, and only inserts symbols if
 the `DreamSymbols` table is completely empty. In any non-Development
-environment it simply never runs — there's nothing to disable.
+environment it never runs at all. This also means: if you already seeded a
+database before `DevelopmentSeeder`'s data changed (e.g. it still has the
+original 4-symbol placeholder set from early development), re-running the
+app won't upgrade it — clear the `DreamSymbols` table (cascades to aliases
+and lucky numbers) and restart, or use Option A/B below to add the missing
+entries directly.
 
 ## Option A: import via the Admin API
 
@@ -46,10 +53,11 @@ insert into "DreamSymbolAliases" ("Id", "DreamSymbolId", "Alias") values (gen_ra
 insert into "LuckyNumbers" ("Id", "DreamSymbolId", "Number", "IsPrimary") values (gen_random_uuid(), '<symbol-id>', 23, true);
 ```
 
-Whichever option you use, the existing four sample symbols should be
-deactivated or deleted (`DELETE /api/admin/dream-symbols/{id}`, or set
-`IsActive = false`) so they don't keep matching alongside the real data —
-`DreamAnalysisService` only ever loads symbols where `IsActive = true`.
+If you're correcting an entry rather than adding a new one, deactivate the
+old row (`DELETE /api/admin/dream-symbols/{id}`, or set `IsActive = false`)
+rather than leaving both in place — `DreamAnalysisService` only ever loads
+symbols where `IsActive = true`, but a stale duplicate is still confusing
+to anyone reading the cheat sheet later.
 
 ## Granting the Admin role
 

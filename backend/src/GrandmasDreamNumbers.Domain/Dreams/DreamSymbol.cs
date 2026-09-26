@@ -3,7 +3,7 @@ using GrandmasDreamNumbers.Domain.Common;
 namespace GrandmasDreamNumbers.Domain.Dreams;
 
 /// <summary>
-/// An entry in the grandmother's private cheat sheet. Never exposed to
+/// An entry in the gogo's private cheat sheet. Never exposed to
 /// public API consumers in full - only matched symbols are returned.
 /// </summary>
 public class DreamSymbol : BaseEntity

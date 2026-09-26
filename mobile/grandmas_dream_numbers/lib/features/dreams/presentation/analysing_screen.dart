@@ -21,6 +21,12 @@ class AnalysingScreen extends ConsumerWidget {
             loading: () => const _AnalysingBody(),
             data: (result) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
+                // Home and History stay mounted (HomeShell uses an
+                // IndexedStack), so their dreamHistoryProvider(null) cache
+                // never naturally refreshes on its own - without this, a
+                // freshly submitted dream wouldn't show up in either until
+                // the app restarted.
+                ref.invalidate(dreamHistoryProvider(null));
                 if (context.mounted) {
                   context.pushReplacement('/dreams/results', extra: result);
                 }
@@ -52,7 +58,7 @@ class _AnalysingBody extends StatelessWidget {
         children: [
           const CircularProgressIndicator(),
           const SizedBox(height: 24),
-          Text('Grandma is thinking about your dream...', style: theme.textTheme.titleMedium),
+          Text('Gogo is thinking about your dream...', style: theme.textTheme.titleMedium),
         ],
       ),
     );

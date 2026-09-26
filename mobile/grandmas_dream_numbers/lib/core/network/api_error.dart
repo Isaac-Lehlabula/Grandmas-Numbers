@@ -28,7 +28,7 @@ String describeApiError(Object error) {
 
   if (error.type == DioExceptionType.connectionTimeout ||
       error.type == DioExceptionType.connectionError) {
-    return "Couldn't reach Grandma's kitchen — check your connection and try again.";
+    return "Couldn't reach Gogo's kitchen — check your connection and try again.";
   }
 
   return 'Something went wrong. Please try again.';

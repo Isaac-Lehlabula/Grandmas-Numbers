@@ -23,6 +23,6 @@ void main() {
       ),
     );
 
-    expect(find.text("Grandma's Dream Numbers"), findsOneWidget);
+    expect(find.text("Gogo's Numbers"), findsOneWidget);
   });
 }

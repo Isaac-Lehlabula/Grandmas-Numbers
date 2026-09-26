@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Warm, culturally-rooted theming for the app. Kept centralized so the
-/// "grandmother's kitchen table" feel stays consistent across screens.
+/// "gogo's kitchen table" feel stays consistent across screens.
 abstract final class AppTheme {
   static const _seedColor = Color(0xFF8D5B3F);
 
